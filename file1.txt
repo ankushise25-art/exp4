@@ -1,1 +1,94 @@
 
+Experiment 1: Basic Setup and First Commit
+Child Analogy: Buying a blank diary and writing your very first diary entry.
+
+Core Concept: Turn a regular computer folder into a Git-tracked folder, create a file, and save its first checkpoint.
+
+Commands to remember:
+
+mkdir Git_Lab && cd Git_Lab — Create a new folder and step inside.
+
+git init — Put Git's magical "eyes" inside the folder (creates the hidden .git folder).
+
+echo "Hello World" > hello.txt — Create a text file.
+
+git status — Check what Git sees.
+
+git add hello.txt — Move the file to the staging tray.
+
+git commit -m "Add hello.txt" — Take the snapshot with a message explaining what changed.
+
+git log — View your diary history of saved snapshots.
+
+Experiment 2: Creating and Switching Branches
+Child Analogy: Making a photocopy of your drawing so you can try coloring it with crayons without ruining the original sheet.
+
+Core Concept: The default timeline is called master (or main). A "branch" is an alternate parallel universe where you can write new code without breaking working code.
+
+Commands to remember:
+
+git branch — See all branches (the star * marks where you are standing right now).
+
+git branch feature-branch — Create the new parallel universe.
+
+git switch feature-branch (or git checkout feature-branch) — Jump into that universe.
+
+Shortcut: git checkout -b feature-branch — Creates and jumps in one single step.
+
+Experiment 3: Stashing Changes
+Child Analogy: You are doing your math homework, but dinner is served immediately. You slip your half-solved page under the rug, eat dinner, and then pull it back out.
+
+Core Concept: If your work is incomplete and messy, Git won't let you switch branches cleanly. git stash hides your messy, uncommitted work temporarily.
+
+Commands to remember:
+
+git stash — Sweeps all uncommitted changes into a temporary storage box.
+
+git stash list — Shows everything sitting in the storage box.
+
+git stash apply — Restores your work back onto the desk without deleting the saved copy from the box.
+
+git stash pop — Restores your work and removes it from the storage box completely.
+
+Experiment 4: Cloning a Remote Repository
+Child Analogy: Downloading a copy of a friend's shared digital photo album from the cloud onto your own laptop.
+
+Core Concept: GitHub is the cloud. Cloning copies an entire project (all code, branches, and full commit history) onto your local machine.
+
+Commands to remember:
+
+git clone [https://github.com/username/repository.git](https://github.com/username/repository.git) — Downloads the repository from the web.
+
+cd repository — Move inside the downloaded project folder.
+
+git log --oneline — See the project history in neat, single-line summaries.
+
+Experiment 5: Fetch and Rebase
+Child Analogy: Fetching updates from the teacher's board and rewriting your notes so your new sentences sit neatly on top of the teacher's latest lines.
+
+Core Concept:
+
+fetch: Checks GitHub to see if anyone added new work without altering your local files yet.
+
+rebase: Moves the starting point of your branch onto the latest commit of the master branch, keeping the timeline completely straight.
+
+Commands to remember:
+
+git fetch origin — Download new history from GitHub.
+
+git switch feature-branch — Ensure you are on your working branch.
+
+git rebase origin/master — Re-align your branch on top of the master branch's latest updates.
+
+Experiment 6: Merging with a Custom Message
+Child Analogy: Gluing your finished coloring page back into the main storybook and adding a note explaining what you added.
+
+Core Concept: Bringing changes from a side branch (feature-branch) into the main branch (master) and sealing the combination with a custom merge note.
+
+Commands to remember:
+
+git switch master — Always stand on the target branch where you want the changes to land.
+
+git merge --no-ff feature-branch -m "Merge feature-branch into master" — Merges the branch and records your specific custom commit message.
+
+git log --graph --oneline — Shows a visual ascii-art tree of the two branches joining together.
